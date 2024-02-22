@@ -7,10 +7,12 @@ public class Main {
         UserInput input = new UserInput();
         int aNumber = input.promptInt("Enter an integer.");
         System.out.println("Twice your number is " + aNumber * 2);
-        double aNumber2 = input.promptDouble("Enter an Double.");
+        double aNumber2 = input.promptDouble("Enter a Double.");
         System.out.println("twice your number is " + aNumber2* 2);
-        String string1 = input.promptString("enter a string");
-        System.out.println("your string is " + string1);
+        String aNumber3 = input.promptString("Enter a string");
+        System.out.println("Your string is " + aNumber3);
+
+
     }
 
 }
@@ -62,8 +64,24 @@ class UserInput {
         return userDouble;
     }
 
-    Scanner keyboard = new Scanner(System.in);
 
-    public String promptString(String message) {
+        public String promptString(String message) {
+            System.out.println(message);
+            String userInput = scanner.nextLine();
 
-}
+            boolean isString = false;
+            while (!isString) {
+                try {
+                    Double.parseDouble(userInput);
+                    System.out.println("this is not a string");
+
+                    userInput = scanner.nextLine();
+
+                } catch (NumberFormatException e) {
+                    isString = true;
+                    System.out.println(userInput);
+                }
+            }
+            return userInput;
+        }
+    }
