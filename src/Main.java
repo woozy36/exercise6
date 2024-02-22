@@ -7,9 +7,12 @@ public class Main {
         UserInput input = new UserInput();
         int aNumber = input.promptInt("Enter an integer.");
         System.out.println("Twice your number is " + aNumber * 2);
-        double aNumber2 = input.promptDouble("Enter an integer.");
+        double aNumber2 = input.promptDouble("Enter an Double.");
         System.out.println("twice your number is " + aNumber2* 2);
+        String string1 = input.promptString("enter a string");
+        System.out.println("your string is " + string1);
     }
+
 }
 
 
@@ -49,7 +52,7 @@ class UserInput {
                 userDouble = Double.parseDouble(userInput);
                 isDouble = true;
             } catch (NumberFormatException e) {
-                System.out.println(userInput + " is not a valid integer. " + message);
+                System.out.println(userInput + " is not a valid Double. " + message);
                 userInput = scanner.nextLine();
             } finally {
                 System.out.println("This line is always executed.");
@@ -58,4 +61,9 @@ class UserInput {
 
         return userDouble;
     }
+
+    Scanner keyboard = new Scanner(System.in);
+
+    public String promptString(String message) {
+
 }
