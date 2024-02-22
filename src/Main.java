@@ -1,5 +1,10 @@
 import java.nio.DoubleBuffer;
 import java.util.Scanner;
+//almost forgot the comments!!!
+//joseph momot CSCI 1660
+//1660? 1660 super!?!?
+//very nice compliment for extra points
+
 
 
 public class Main {
